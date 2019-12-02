@@ -52,6 +52,7 @@ const Login = (request, response) => {
     }
   });
 };
+
 /*
 const getIngresar = document.getElementById("btnIT");
 function guardarIT(){
