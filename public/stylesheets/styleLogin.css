@@ -1,0 +1,550 @@
+@import url("https://fonts.googleapis.com/css?family=Lato&display=swap");
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+}
+
+body {
+  background-image: url(/images/loginFondo.jpg);
+  background-size: cover;
+  height: 5em;
+}
+
+.container {
+  margin-top: 2em;
+}
+
+/*logo UCA*/
+.logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo img {
+  height: 7em;
+  width: 16em;
+}
+
+/*formulario*/
+.formulario {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.form {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+}
+
+.form label {
+  color: white;
+  font-family: "Lato", sans-serif;
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.user {
+  border-radius: 6px;
+  height: 2.5em;
+  font-size: 18px;
+  color: black;
+  font-family: "Lato", sans-serif;
+  padding-left: 10px;
+  width: 16em;
+}
+
+.user::placeholder {
+  text-align: center;
+}
+
+.pass {
+  border-radius: 6px;
+  height: 2.5em;
+  font-size: 18px;
+  color: black;
+  font-family: "Lato", sans-serif;
+  padding-left: 10px;
+  width: 16em;
+}
+
+.pass::placeholder {
+  text-align: center;
+}
+
+/*boton iniciar*/
+.btn-iniciar {
+  border-radius: 6px;
+  color: white;
+  background-color: #24a107;
+  height: 2.5em;
+  font-size: 18px;
+  transition: 0.3s all;
+  margin-top: 16px;
+  border: none;
+  width: 16.5em;
+}
+
+.btn-iniciar:hover {
+  border: 4px solid #24a107;
+  background-color: transparent;
+  color: white;
+}
+
+/*link de ¿olvido su contraseña?*/
+.link {
+  display: flex;
+  justify-self: end;
+  margin-top: 45px;
+}
+
+.link a {
+  color: white;
+  font-size: 15px;
+  font-family: "Lato", sans-serif;
+  transition: 0.3s all;
+}
+
+.link a:hover {
+  opacity: 0.4;
+}
+
+/*JQUERY*/
+
+/*Galaxy S5*/
+@media (max-width: 360px) and (max-height: 640px) {
+  .container {
+    margin-top: 2em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 4em;
+    width: 10em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 11em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 11em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 11.5em;
+  }
+}
+
+/*Pixel 2*/
+@media (max-width: 411px) and (max-height: 731px) {
+  .container {
+    margin-top: 4em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 5em;
+    width: 13em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 14.5em;
+  }
+}
+
+/*pixel 2XL*/
+@media (max-width: 411px) and (max-height: 823px) {
+  .container {
+    margin-top: 4em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 5em;
+    width: 13em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 14.5em;
+  }
+}
+
+/*Iphone 5*/
+@media (max-width: 320px) and (max-height: 568px) {
+  .container {
+    margin-top: 2em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 4em;
+    width: 10em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 11em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 11em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 11.5em;
+  }
+}
+
+/*Iphone 6/7/8 */
+@media (max-width: 414px) and (max-height: 736px) {
+  .container {
+    margin-top: 3em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 5em;
+    width: 13em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 14.5em;
+  }
+}
+
+/*ipad*/
+@media (max-width: 1024px) and (max-height: 1366px) {
+  .container {
+    margin-top: 3em;
+  }
+
+  /*logo UCA*/
+  .logo {
+    display: flex;
+    justify-content: center;
+  }
+
+  .logo img {
+    height: 5em;
+    width: 13em;
+  }
+
+  .form label {
+    color: white;
+    font-family: "Lato", sans-serif;
+    font-size: 15px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+
+  .user {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .pass {
+    border-radius: 6px;
+    height: 2.5em;
+    font-size: 15px;
+    color: black;
+    font-family: "Lato", sans-serif;
+    padding-left: 10px;
+    width: 14em;
+  }
+
+  .link {
+    display: flex;
+    justify-self: end;
+    margin-top: 30px;
+  }
+
+  .link a {
+    color: white;
+    font-size: 12px;
+    font-family: "Lato", sans-serif;
+    transition: 0.3s all;
+  }
+
+  /*boton iniciar*/
+  .btn-iniciar {
+    border-radius: 6px;
+    color: white;
+    background-color: #24a107;
+    height: 2.5em;
+    font-size: 15px;
+    transition: 0.3s all;
+    margin-top: 16px;
+    border: none;
+    width: 14.5em;
+  }
+}

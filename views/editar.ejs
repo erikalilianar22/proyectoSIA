@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="stylesheets/styleFormulario.css">
+    <title>EDITAR</title>
+</head>
+
+<body>
+    <div class="header">
+        <div data-collapse="medium" data-animatio="default" data-duration="400" class="navigation w-nav">
+            <div class="navigation-wrap">
+                    <img src="images/logoAzul.png" width="162" class="logo-image">
+                </a>
+                <div class="menu">
+                    <nav role="navigation" class="navigation-items w-nav-menu">
+                        <a href="/" class="navigation-item w-nav-link">
+                            <strong>INICIO</strong>
+                        </a>
+                        <a href="#" class="navigation-item w-nav-link">
+                            <strong>INGRESAR</strong>
+                        </a>
+                        <a href="#" class="navigation-item w-nav-link">
+                            <strong>EDITAR</strong>
+                        </a>
+                        <a href="#footer" class="navigation-item w-nav-link">
+                            <strong>CONTACTO</strong>
+                        </a>
+                        <a href="#" class="navigation-item w-nav-link">
+                            <strong>MANUAL</strong>
+                        </a>
+                    </nav>
+                </div>
+
+                <a href="/login">
+                    <input type="submit" class="btn-cerrar" value="CERRAR SESIÓN">
+                </a>
+
+            </div>
+        </div>
+
+        <h2 class="subtitulo">EDITAR INFORMACION</h2>
+
+        <div class="tab">
+            <button class="tablinks" onclick="pestaña(event, 'taxonomica')">Información Taxonómica</button>
+            <button class="tablinks" onclick="pestaña(event, 'Grupo')">Grupo</button>
+            <button class="tablinks" onclick="pestaña(event, 'Arbol')">Arbol</button>
+        </div>
+
+        <div class="all-form">
+
+            <div id="taxonomica" class="tabcontent" display="block">
+                <div class="tabla">
+
+                </div>
+
+                <div class="formulario">
+                    <form class="form">
+
+                        <label class="label" for="cod-especie">
+                            Cdigo especie:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="cod-especie" required>
+
+                        <label class="label" for="familia">
+                            Familia:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="familia" required>
+
+                        <label class="label" for="orden">
+                            Orden:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="orden" required>
+
+                        <label class="label" for="division">
+                            Division:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="division" required>
+
+                        <label class="label" for="nombre-cientifico">
+                            Nombre cientifico:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="nombre-cientifico" required>
+
+                        <input type="submit" value="seleccionar archivo" class="btn-img w-button">
+
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="Grupo" class="tabcontent">
+
+                <div class="tabla">
+
+                </div>
+
+                <div class="formulario">
+                    <form class="form">
+
+                        <label class="label" for="cod-grupo">
+                            Codigo grupo:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="cod-grupo" required>
+
+                        <label class="label" for="cod-esp">
+                            Codigo de especie:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="cod-esp" required>
+
+                        <label class="label" for="Coordenada">
+                            Coordenada:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="Coordenada" required>
+
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+
+                    </form>
+                </div>
+            </div>
+
+            <div id="Arbol" class="tabcontent">
+
+                <div class="tabla">
+                </div>
+
+                <div class="formulario">
+                    <form class="form">
+
+                        <label class="label" for="cod-arbol">
+                            Codigo arbol:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-imput" maxlength="256" id="cod-arbol" required>
+
+                        <label class="label" for="dap">
+                            Dap (diametro a la altura del pecho):
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="dap" required>
+
+                        <label class="label" for="coord">
+                            Coordenada:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="coord" required>
+
+                        <label class="label" for="info-taxo">
+                            Informacion taxonomica:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="info-taxo" required>
+
+                        <label class="label" for="comentario">
+                            Comentario:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <textarea class="Comentario" maxlength="5000" id="comentario"></textarea>
+
+                        <div class="swtich-container">
+                            <input type="checkbox" value="GRUPO" id="switch">
+                            <label for="switch" class="lbl"></label>
+                            <label for="switch" class="label-grupo"> grupo</label>
+                        </div>
+
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer" id="footer">
+            <div class="RedesSociales">
+                <a href="https://www.facebook.com/UCA.ElSalvador">
+                    <img src="images/iconoFacebook.png" width="40" height="40" class="facebook">
+                </a>
+                <a href="https://twitter.com/UCA_ES?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                    <img src="images/IconoTwitter.png" width="40" height="40" class="twitter">
+                </a>
+                <a href="https://www.instagram.com/uca_elsalvador/?hl=es-la">
+                    <img src="images/IconoInstagram.png" width="63" height="50" class="instagram">
+                </a>
+                <a href="http://www.uca.edu.sv/">
+                    <img src="images/IconoWebSite.png" width="45" height="45" class="web">
+                </a>
+
+                <img src="images/IconoTelefono.png" width="41" height="38" class="telefono" title="2210-6600">
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="javascripts/form.js"></script>
+
+</html>
