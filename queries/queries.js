@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 const pool = new Pool({
-  user: "admin",
-  host: "localhost",
+  user: "mjfunpir",
+  host: "raja.db.elephantsql.com",
   database: "proyectoSIA",
-  password: "",
+  password: "xQRkWzjG3NLTxg89yoAL6VvpHxKXf8RS",
   port: 5432
 });
 const getUsers = (request, response) => {
@@ -28,16 +28,15 @@ const getUsers = (request, response) => {
 const Login = (request, response) => {
   const query = {
     // give the query a unique name
-    name: 'login',
-    text: 'SELECT * FROM usuario where correo = $1 and contrasenna = $2',
-    values: [request.body.usuario, request.body.contrasena],
-  }
+    name: "login",
+    text: "SELECT * FROM usuario where correo = $1 and contrasenna = $2",
+    values: [request.body.usuario, request.body.contrasena]
+  };
   pool.query(query, (error, results) => {
     if (error) {
       response.status(500).json("Fallo!");
     }
-    if(results.rows.length > 0){
-
+    if (results.rows.length > 0) {
       const payload = {
         check: true
       };
@@ -48,8 +47,7 @@ const Login = (request, response) => {
         mensaje: "Autenticación correcta",
         token: token
       });
-    }
-    else{
+    } else {
       response.status(401).json("Unauthorized");
     }
   });

@@ -41,15 +41,18 @@
             id="btn-iniciar"
             class="btn-iniciar"
             value="LOGIN"
+            href="/ingresar"
           />
         </form>
       </div>
     </div>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </body>
   <script src="/javascripts/login.js"></script>
 </html>
 <script>
   function login() {
+    window.location.replace("/ingresar");
     let url = "http://localhost:3000/login";
     let data = {
       usuario: document.getElementById("email").value,
