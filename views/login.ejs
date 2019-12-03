@@ -17,6 +17,7 @@
         <form class="form">
           <label for="user">Username:</label>
           <input
+            id="email"
             type="email"
             class="user"
             title="username"
@@ -25,6 +26,7 @@
           />
           <label for="pass">Password:</label>
           <input
+            id="password"
             type="password"
             class="pass"
             title="password"
@@ -36,12 +38,11 @@
             <a href="">¿Olvidó su contraseña?</a>
           </div>
           <input
-            onclick="login()"
             type="submit"
+            onclick="login()"
             id="btn-iniciar"
             class="btn-iniciar"
             value="LOGIN"
-            href="/ingresar"
           />
         </form>
       </div>
@@ -52,21 +53,21 @@
 </html>
 <script>
   function login() {
-    window.location.replace("/ingresar");
     let url = "http://localhost:3000/login";
     let data = {
       usuario: document.getElementById("email").value,
       contrasena: document.getElementById("password").value
     };
-    debugger;
     fetch(url, {
-      method: "POST", // or 'PUT'
-      body: JSON.stringify(data), // data can be `string` or {object}!
+      method: "POST",
+      body: JSON.stringify(data),
       headers: {
         "Content-Type": "application/json"
       }
     })
-      .then(res => res.json())
+      .then(function(response) {
+        window.location.replace("/ingresar");
+      })
       .catch(error => console.error("Error:", error))
       .then(response => console.log("Success:", response));
   }

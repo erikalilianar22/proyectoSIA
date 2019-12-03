@@ -10,10 +10,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 const pool = new Pool({
-  user: "mjfunpir",
-  host: "raja.db.elephantsql.com",
+  user: "admin",
+  host: "localhost",
   database: "proyectoSIA",
-  password: "xQRkWzjG3NLTxg89yoAL6VvpHxKXf8RS",
+  password: "",
   port: 5432
 });
 const getUsers = (request, response) => {
@@ -52,15 +52,7 @@ const Login = (request, response) => {
     }
   });
 };
-/*
-const getIngresar = document.getElementById("btnIT");
-function guardarIT(){
-  fetch("INSERT INTO informacion_taxonomica (codigo,especie,nombre_cientifico,familia,division) VALUES ('','','','','')")
-  .then(res => res.json())
-  .then(data =>{
-    console.log("hola");
-  });
-}*/
+
 module.exports = {
   getUsers,
   Login
