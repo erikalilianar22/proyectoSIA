@@ -59,40 +59,45 @@
 
                 <div class="formulario">
                     <form class="form">
-
-                        <label class="label" for="cod-especie">
-                            Codigo Especie:
+                        <!--codigo-->
+                        <label class="label" for="codigo-info">
+                            Codigo:
                             <span class="error" aria-live="polite"></span>
                         </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="cod-especie" required>
+                        <input type="text" class="text-field w-input" maxlength="256" id="codigo-info" required>
 
+                        <!--especie-->
+                        <label class="label" for="especie">
+                            Especie:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="especie" required>
+
+                        <!--nombre cientifico-->
+                        <label class="label" for="nombre-cientifico">
+                            Nombre cientifico:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="nombre-cientifico" required>
+
+                        <!--familia-->
                         <label class="label" for="familia">
                             Familia:
                             <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="familia" required>
 
-                        <label class="label" for="orden">
-                            Orden:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="orden" required>
-
+                        <!--division-->
                         <label class="label" for="division">
                             Division:
                             <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="division" required>
 
-                        <label class="label" for="nombre-cientifico">
-                            Nombre cientifico:
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="nombre-cientifico" required>
-
+                        <!--boton para subir imagenes-->
                         <input type="submit" value="seleccionar archivo" class="btn-img w-button">
 
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
-
+                        <!--boton de guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertInfoTaxo()">
                     </form>
                 </div>
             </div>
@@ -106,22 +111,26 @@
                 <div class="formulario">
                     <form class="form">
 
+                        <!--codigo de grupo-->
                         <label class="label" for="cod-grupo">
                             Codigo grupo:
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="cod-grupo" required>
 
+                        <!--nombre-->
                         <label class="label" for="cod-esp">
-                            Codigo de especie:
+                            Nombre:
                         </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="cod-esp" required>
+                        <input type="text" class="text-field w-input" maxlength="256" id="nombre" required>
 
+                        <!--ubicacion-->
                         <label class="label" for="Coordenada">
                             Coordenada:
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="Coordenada" required>
 
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+                        <!--boton guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertGrupo()">
 
                     </form>
                 </div>
@@ -135,48 +144,56 @@
                 <div class="formulario">
                     <form class="form">
 
+                        <!--codigo Arbol-->
                         <label class="label" for="cod-arbol">
                             Codigo arbol:
                         </label>
                         <input type="text" class="text-field w-imput" maxlength="256" id="cod-arbol" required>
 
+                        <!--cod grupo-->
+                        <label class="label" for="grupo">
+                            Codigo Grupo:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="grupo" required>
+
+                        <!--cod info taxonomica-->
+                        <label class="label" for="cod-info">
+                            Codigo Informacion taxonomica:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="cod-info" required>
+
+                        <!--nombre comun-->
+                        <label class="label" for="comun">
+                            Nombre Comun:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="comun" required>
+
+                        <!--DAP-->
                         <label class="label" for="dap">
                             Dap (diametro a la altura del pecho):
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="dap" required>
 
+                        <!--ubicacion-->
                         <label class="label" for="coord">
                             Coordenada:
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="coord" required>
 
-                        <label class="label" for="info-taxo">
-                            Informacion taxonomica:
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="info-taxo" required>
-
+                       <!--comentario-->
                         <label class="label" for="comentario">
                             Comentario:
                         </label>
                         <textarea class="Comentario" maxlength="5000" id="comentario"></textarea>
 
-                        <label class="label" for="grupo">
-                            Grupo:
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="grupo" required>
-
-
-                        
-
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
-
+                        <!--boton guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertArbol()">
                     </form>
                 </div>
             </div>
         </div>
 
-
-
+        <!--FOOTER-->
         <div class="footer" id="footer">
             <div class="RedesSociales">
                 <a href="https://www.facebook.com/UCA.ElSalvador">
@@ -200,5 +217,78 @@
 
 </body>
 <script src="javascripts/form.js"></script>
-
 </html>
+
+<script>
+    /*funcion para insertar informacion taxonomica*/
+    function InsertInfoTaxo() {
+      window.location.replace("/ingresar");
+      let url = "http://localhost:3000/ingresar";
+      let data = {
+        codigoInfo: document.getElementById("codigo-info").value,
+        especie: document.getElementById("especie").value,
+        nombreCientifico: document.getElementById("nombre-cientifico").value,
+        familia: document.getElementById("familia").value,
+        division: document.getElementById("division").value
+      };
+      debugger;
+      fetch(url, {
+        method: "POST", // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .catch(error => console.error("Error:", error))
+        .then(response => console.log("Success:", response));
+    }
+
+    /*funcion para insertar un grupo*/
+    function InsertGrupo() {
+      window.location.replace("/ingresar");
+      let url = "http://localhost:3000/ingresar";
+      let data = {
+        codigoGrupo: document.getElementById("cod-grupo").value,
+        nombre: document.getElementById("nombre").value,
+        coordenada: document.getElementById("coordenada").value
+      };
+      debugger;
+      fetch(url, {
+        method: "POST", // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .catch(error => console.error("Error:", error))
+        .then(response => console.log("Success:", response));
+    }
+
+    /*funcion para insertar Arbol*/
+    function InsertArbol() {
+      window.location.replace("/ingresar");
+      let url = "http://localhost:3000/ingresar";
+      let data = {
+        codigoArbol: document.getElementById("cod-arbol").value,
+        grupo: document.getElementById("grupo").value,
+        codigoInformacion: document.getElementById("cod-info").value,
+        comun: document.getElementById("comun").value,
+        dap: document.getElementById("dap").value,
+        coordenada: document.getElementById("coord").value,
+        comentario: document.getElementById("comentario").value
+      };
+      debugger;
+      fetch(url, {
+        method: "POST", // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}!
+        headers: {
+          "Content-Type": "application/json"
+        }
+      })
+        .then(res => res.json())
+        .catch(error => console.error("Error:", error))
+        .then(response => console.log("Success:", response));
+    }
+  </script>
