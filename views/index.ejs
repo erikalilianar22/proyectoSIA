@@ -1,131 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="stylesheets/styleIndex.css" />
-    <title>INICIO</title>
-  </head>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="stylesheets/styleIndex.css" />
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <title>INICIO</title>
+</head>
+
+<body>
 
   <body>
-    <body>
-      <div class="header">
-        <div
-          data-collapse="medium"
-          data-animatio="default"
-          data-duration="400"
-          class="navigation w-nav"
-        >
-          <div class="navigation-wrap">
-              <img src="images/logoAzul.png" width="162" class="logo-image" />
-            </a>
-            <div class="menu">
-              <nav role="navigation" class="navigation-items w-nav-menu">
-                <a href="#buscador" class="navigation-item w-nav-link">
-                  <strong>BUSCAR</strong>
-                </a>
-                <a href="#footer" class="navigation-item w-nav-link">
-                  <strong>CONTACTO</strong>
-                </a>
-                <a href="#" class="navigation-item w-nav-link">
-                  <strong>MANUAL</strong>
-                </a>
-              </nav>
-            </div>
-
-            <a href="/login">
-              <input type="submit" class="btn-iniciar" value="INICIAR SESIÓN" />
-            </a>
+    <div class="header">
+      <div data-collapse="medium" data-animatio="default" data-duration="400" class="navigation w-nav">
+        <div class="navigation-wrap">
+          <img src="images/logoAzul.png" width="162" class="logo-image" />
+          </a>
+          <div class="menu">
+            <nav role="navigation" class="navigation-items w-nav-menu">
+              <a href="#buscador" class="navigation-item w-nav-link">
+                <strong>BUSCAR</strong>
+              </a>
+              <a href="#footer" class="navigation-item w-nav-link">
+                <strong>CONTACTO</strong>
+              </a>
+              <a href="#" class="navigation-item w-nav-link">
+                <strong>MANUAL</strong>
+              </a>
+            </nav>
           </div>
-        </div>
-        <div class="silder">
-          <ul>
-            <li><img src="/images/img10.jpg" /></li>
-            <li><img src="/images/img11.jpg" /></li>
-            <li><img src="/images/img8.jpg" /></li>
-            <li><img src="/images/img7.jpg" /></li>
-          </ul>
+
+          <a href="/login">
+            <input type="submit" class="btn-iniciar" value="INICIAR SESIÓN" />
+          </a>
         </div>
       </div>
+    </div>
+
+    <div class="Mega-buscador">
+      <!-- silder -->
+      <div class="silder">
+        <ul>
+          <li><img src="/images/img10.jpg" /></li>
+          <li><img src="/images/img11.jpg" /></li>
+          <li><img src="/images/img8.jpg" /></li>
+          <li><img src="/images/img7.jpg" /></li>
+        </ul>
+      </div>
+
+      <!-- buscador -->
       <div class="buscador" id="buscador">
         <div class="container-2 w-container">
           <div class="section-heading">
             <h2 class="buscador">BUSCADOR</h2>
             <div class="med-divider"></div>
           </div>
-          <div>
-            <form class="w-clearfix">
-              <select name="tipo" class="tipo">
-                <option>Nombre común</option>
+          <div class="buscadorContenedor">
+            <div class="buscadorOpciones">
+              <select name="tipo" class="tipo desplegable" id="clausulaBusqueda">
+                <option>Nombre comun</option>
                 <option>Especie</option>
-                <option>Código</option>
+                <option>Codigo</option>
               </select>
-              <input type="text" maxlength="256" class="field w-input" />
-            </form>
-            <input
-            type="submit"
-            value="BUSCAR"
-            class="submit-button w-button"
-          />
+            </div>
+            <div class="BuscadorInput">
+              <input type="text" maxlength="256" class="field w-input" id="txtinput" />
+            </div>
+            <div class="botonBuscador">
+              <input type="submit" value="BUSCAR" class="submit-button w-button" id="btninputB" />
+            </div>
           </div>
         </div>
       </div>
+      <!-- fin del buscador -->
+    </div>
 
-      <div>
-        <iframe
-          src="https://www.google.com/maps/d/embed?mid=1zlEFJGUjSyuifrB4Zc18-hQNtqVV4YH5"
-          width="640"
-          height="480"
-        ></iframe>
+    <div class="mapa">
+      <!-- mapaaaa -->
+      <div id="mapaA"></div>
+
+      <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+        integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+        crossorigin=""></script>
+
+      <script>
+
+        let buscador = document.querySelector('#txtinput');//txt donde se ingresa la info
+        let btnBuscar = document.querySelector('#btninputB');//boton para buscar
+        let condicion = document.querySelector('#clausulaBusqueda') //el munu desplegable
+        const tilesProvider = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';// url para 
+        let condBusqueda;
+        // ---------------------------------------------------- Base de Datos Temporal ----------------------------------------------------
+        const bdPrueba = [
+          {
+            codigo: 'UCA-IP-00001',
+            nombre: 'Magna 1',
+            especie: 'c',
+            longitud: 13.680855,
+            latitud: -89.235514
+          },
+          {
+            codigo: 'UCA-IP-00002',
+            nombre: 'Magna 2',
+            especie: 'b',
+            longitud: 13.681067,
+            latitud: -89.235521
+          },
+          {
+            codigo: 'UCA-IP-00003',
+            nombre: 'Magna 5',
+            especie: 'c',
+            longitud: 13.680965,
+            latitud: -89.236375
+          },
+          {
+            codigo: 'UCA-IP-00003',
+            nombre: 'Magna 7',
+            especie: 'e',
+            longitud: 13.681065,
+            latitud: -89.236375
+          }
+
+        ];
+        //---------------------------------------------------- fin base de datos ----------------------------------------------------
+
+        let MyMap = L.map('mapaA').setView([13.680853, -89.235974], 13)//asignando el centro de las coordenadas
+
+        L.tileLayer(tilesProvider, {//inicializando api
+          maxZoom: 20,//colocando el zoom maximo
+        }).addTo(MyMap);
+
+        //Agregando marcador
+
+        //let marcador = L.marker([13.681078, -89.235505]).addTo(MyMap);
+        //Aqui se puede personalizar el marcador, para poner un arbol o algo por el estilo
+        /*
+        let iconoMarcador = L.icon(
+            {
+                iconUrl:'direccion del icono png',
+                iconSize:[60, 60],
+                iconAnchor: [30,60]
+            }
+        );
+        //creando nuevo marcador con el icono
+        let marcador2=L.marker([13.681078, -89.235505],{icon:iconoMarcador}).addTo(MyMap);
+        */
+        //funcion para mostrar puntos
+
+        MyMap.doubleClickZoom.disable();//para evitar que se de zoom con el doble click
+
+        MyMap.on('dblclick', e => {// funcion para poner coordenada con doble click
+          let latLng = MyMap.mouseEventToLatLng(e.originalEvent);
+          L.marker([latLng.lat, latLng.lng]).addTo(MyMap);
+        })
+
+
+
+
+
+        function selector() {
+          console.log('asdfghj')
+          let con = condicion.options[condicion.selectedIndex].text;
+          if (con === 'Nombre comun') {
+            for (let i = 0; i < bdPrueba.length; i++) {
+              if (bdPrueba[i].nombre === buscador) {
+                L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+              }
+            }
+          } else {
+            if (con === 'Especie') {
+              for (let i = 0; i < bdPrueba.length; i++) {
+                if (bdPrueba[i].especie === buscador) {
+                  L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+                }
+              }
+
+            } else {
+              if (con === 'Codigo') {
+                for (let i = 0; i < bdPrueba.length; i++) {
+                  if (bdPrueba[i].codigo === buscador) {
+                    L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+                  }
+                }
+              }
+            }
+          }
+        };
+        // fin de la funcion
+
+
+        btnBuscar.addEventListener("click", function () {
+          let con = condicion.options[condicion.selectedIndex].text;
+          console.log('la condicion es: ' + con);
+          console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
+          if (con === 'Nombre comun') {
+            console.log('aaaaaaaaaaaaaa 1');
+            for (let i = 0; i < bdPrueba.length; i++) {
+              console.log('aaaaaaaaa 1f');
+              console.log('buscador: ' + buscador.value);
+              if (bdPrueba[i].nombre === buscador.value) {
+                console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa maker1');
+                L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+              } else {
+                console.log('azucar');
+              }
+            }
+          } else {
+            console.log('bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb');
+            if (con === 'Especie') {
+              console.log('bbbbbbbbbbbbbbbbbbbbbbbbb 2');
+              for (let i = 0; i < bdPrueba.length; i++) {
+                console.log('bbbbbbbbbbbbbbbbbbbbbbbb f2');
+                if (bdPrueba[i].especie === buscador.value) {
+                  console.log('bbbbbbbbbbbbbbbbbbb maker 2');
+                  L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+                }
+              }
+
+            } else {
+              console.log('ccccccccccccccccccccccccccccccccccc');
+              if (con === 'Codigo') {
+                console.log('ccccccccccccccccccc 3');
+                for (let i = 0; i < bdPrueba.length; i++) {
+                  console.log('cccccccccccccccccccccccc f3');
+                  if (bdPrueba[i].codigo === buscador.value) {
+                    console.log('cccccccccccccccccccc maker');
+                    L.marker([bdPrueba[i].longitud, bdPrueba[i].latitud]).addTo(MyMap);
+                  }
+                }
+              }
+            }
+          }
+        }, false);
+
+
+
+
+
+      </script>
+
+
+    </div>
+
+
+
+    <div class="footer" id="footer">
+      <div class="RedesSociales">
+        <a href="https://www.facebook.com/UCA.ElSalvador">
+          <img src="images/iconoFacebook.png" width="40" height="40" class="facebook" />
+        </a>
+        <a href="https://twitter.com/UCA_ES?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+          <img src="images/IconoTwitter.png" width="40" height="40" class="twitter" />
+        </a>
+        <a href="https://www.instagram.com/uca_elsalvador/?hl=es-la">
+          <img src="images/IconoInstagram.png" width="63" height="50" class="instagram" />
+        </a>
+        <a href="http://www.uca.edu.sv/">
+          <img src="images/IconoWebSite.png" width="45" height="45" class="web" />
+        </a>
+
+        <img src="images/IconoTelefono.png" width="41" height="38" class="telefono" title="2210-6600" />
       </div>
-
-      <div class="footer" id="footer">
-        <div class="RedesSociales">
-          <a href="https://www.facebook.com/UCA.ElSalvador">
-            <img
-              src="images/iconoFacebook.png"
-              width="40"
-              height="40"
-              class="facebook"
-            />
-          </a>
-          <a
-            href="https://twitter.com/UCA_ES?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-          >
-            <img
-              src="images/IconoTwitter.png"
-              width="40"
-              height="40"
-              class="twitter"
-            />
-          </a>
-          <a href="https://www.instagram.com/uca_elsalvador/?hl=es-la">
-            <img
-              src="images/IconoInstagram.png"
-              width="63"
-              height="50"
-              class="instagram"
-            />
-          </a>
-          <a href="http://www.uca.edu.sv/">
-            <img
-              src="images/IconoWebSite.png"
-              width="45"
-              height="45"
-              class="web"
-            />
-          </a>
-
-          <img
-            src="images/IconoTelefono.png"
-            width="41"
-            height="38"
-            class="telefono"
-            title="2210-6600"
-          />
-        </div>
-      </div>
-    </body>
+    </div>
   </body>
+</body>
+
 </html>

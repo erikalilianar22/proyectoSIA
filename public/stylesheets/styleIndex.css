@@ -12,23 +12,23 @@ body {
 .silder {
   margin: auto;
   overflow: hidden;
-  height: 850px;
+  height: 800px;
 }
 
 .silder ul {
   display: flex;
   padding: 0;
   width: 400%;
-
   animation: cambio 30s infinite alternate-reverse;
 }
 
 .silder li {
-  width: 100%;
+  width: 90%;
   list-style: none;
 }
 
 .silder img {
+  padding: 0% 5%;
   width: 100%;
 }
 
@@ -193,9 +193,7 @@ body {
 /*contenedor de bienvenida*/
 .container {
   border-radius: 6px;
-  /*background-image: ;*/
   background-position: 0px 0px;
-  /*background-size: cover;*/
   margin-left: 6%;
   margin-right: 6%;
   height: auto;
@@ -213,25 +211,35 @@ body {
 }
 
 /*contenedor de buscador*/
+
+#buscador{
+  
+  background: #00467e;
+  margin: 1% 20%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .container-2 {
-  border-radius: 6px;
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left bottom,
-    from(#00467e),
-    to(#00467e)
-  );
-  background-image: linear-gradient(180deg, #00467e, #00467e);
+  background:#ffffff00;
+  width: 90%;
   color: #fff;
-  padding: 30px 250px;
+  padding: 60px 1%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.w-clearfix{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 /*titulo de buscador*/
 .buscador {
+  font-size: 20px;
   font-family: "Lato", sans-serif;
   color: #fff;
 }
@@ -262,25 +270,28 @@ body {
 }
 
 .tipo {
-  width: 18%;
+  border: 2px solid #ffffff;
+  width: auto;
   height: 40px;
   float: left;
-  border: 1px none #000;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
-  color: black;
+  background:#00467e;
+  color: white;
   font-size: 20px;
-  font-family: "Lato", sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   margin-right: 5px;
+
+}
+
+.tipo:hover{
+  background: #ffffff7a;
+  color: rgb(0, 0, 0);
 }
 
 .field {
-  width: 50%;
+  width: 400px;
   height: 40px;
   float: left;
   border: 1px none #000;
-  border-top-left-radius: 3px;
-  border-bottom-left-radius: 3px;
   color: black;
   font-size: 20px;
   font-family: "Lato", sans-serif;
@@ -290,17 +301,36 @@ body {
 
 .submit-button {
   text-decoration: none;
-  width: 25%;
+  width: auto;
   height: 40px;
-  border-radius: 3px;
-  background-color: black;
-  font-family: "Lato", sans-serif;
+  background-color:#00457e00;
+  border: 2px solid #d4d3d3;
+  font-family: Arial, Helvetica, sans-serif;
   color: white;
+  font-size:20px;
+}
+/*
+.submit-button:hover {
+  background-color: #858383;
+}
+*/
+/*MAPA*/
+#map {
+	height: 500px;
+  width: 90%;
+  margin: 0% 5%;
+  background-color: aqua;
 }
 
-.submit-button:hover {
-  background-color: white;
-  color: black;
+#mapaA {
+	height: 500px;
+  width: 90%;
+  margin: 0% 5%;
+  background-color: aqua;
+}
+.buscadorContenedor{
+  display: flex;
+  justify-content: center;
 }
 
 /*FOOTER*/

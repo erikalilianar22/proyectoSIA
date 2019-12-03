@@ -13,7 +13,7 @@
     <div class="header">
         <div data-collapse="medium" data-animatio="default" data-duration="400" class="navigation w-nav">
             <div class="navigation-wrap">
-                    <img src="images/logoAzul.png" width="162" class="logo-image">
+                <img src="images/logoAzul.png" width="162" class="logo-image">
                 </a>
                 <div class="menu">
                     <nav role="navigation" class="navigation-items w-nav-menu">
@@ -169,11 +169,13 @@
                         </label>
                         <textarea class="Comentario" maxlength="5000" id="comentario"></textarea>
 
-                        <div class="swtich-container">
-                            <input type="checkbox" value="GRUPO" id="switch">
-                            <label for="switch" class="lbl"></label>
-                            <label for="switch" class="label-grupo"> grupo</label>
-                        </div>
+                        <label class="label" for="grupo">
+                            Grupo:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="grupo" required>
+
+
 
                         <input type="submit" value="GUARDAR" class="btn-guardar w-button">
 

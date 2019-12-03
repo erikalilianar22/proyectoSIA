@@ -53,6 +53,18 @@ const Login = (request, response) => {
   });
 };
 
+<<<<<<< HEAD
+=======
+/*
+const getIngresar = document.getElementById("btnIT");
+function guardarIT(){
+  fetch("INSERT INTO informacion_taxonomica (codigo,especie,nombre_cientifico,familia,division) VALUES ('','','','','')")
+  .then(res => res.json())
+  .then(data =>{
+    console.log("hola");
+  });
+}*/
+>>>>>>> 7a652b9122cf71798b67afc18fe9be6ff5d4707f
 module.exports = {
   getUsers,
   Login
