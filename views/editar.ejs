@@ -59,41 +59,45 @@
 
                 <div class="formulario">
                     <form class="form">
-
-                        <label class="label" for="cod-especie">
-                            Cdigo especie:
+                        <!--codigo-->
+                        <label class="label" for="codigo-info">
+                            Codigo:
                             <span class="error" aria-live="polite"></span>
                         </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="cod-especie" required>
+                        <input type="text" class="text-field w-input" maxlength="256" id="codigo-info" required>
 
+                        <!--especie-->
+                        <label class="label" for="especie">
+                            Especie:
+                            <span class="error" aria-live="polite"></span>
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="especie" required>
+
+                        <!--nombre cientifico-->
+                        <label class="label" for="nombre-cientifico">
+                            Nombre cientifico:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="nombre-cientifico" required>
+
+                        <!--familia-->
                         <label class="label" for="familia">
                             Familia:
                             <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="familia" required>
 
-                        <label class="label" for="orden">
-                            Orden:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="orden" required>
-
+                        <!--division-->
                         <label class="label" for="division">
                             Division:
                             <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="division" required>
 
-                        <label class="label" for="nombre-cientifico">
-                            Nombre cientifico:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="nombre-cientifico" required>
-
+                        <!--boton para subir imagenes-->
                         <input type="submit" value="seleccionar archivo" class="btn-img w-button">
 
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
-
+                        <!--boton de guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertInfoTaxo()">
                     </form>
                 </div>
             </div>
@@ -107,25 +111,26 @@
                 <div class="formulario">
                     <form class="form">
 
+                        <!--codigo de grupo-->
                         <label class="label" for="cod-grupo">
                             Codigo grupo:
-                            <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="cod-grupo" required>
 
+                        <!--nombre-->
                         <label class="label" for="cod-esp">
-                            Codigo de especie:
-                            <span class="error" aria-live="polite"></span>
+                            Nombre:
                         </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="cod-esp" required>
+                        <input type="text" class="text-field w-input" maxlength="256" id="nombre" required>
 
+                        <!--ubicacion-->
                         <label class="label" for="Coordenada">
                             Coordenada:
-                            <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="Coordenada" required>
 
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+                        <!--boton guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertGrupo()">
 
                     </form>
                 </div>
@@ -139,46 +144,50 @@
                 <div class="formulario">
                     <form class="form">
 
+                        <!--codigo Arbol-->
                         <label class="label" for="cod-arbol">
                             Codigo arbol:
-                            <span class="error" aria-live="polite"></span>
                         </label>
                         <input type="text" class="text-field w-imput" maxlength="256" id="cod-arbol" required>
 
-                        <label class="label" for="dap">
-                            Dap (diametro a la altura del pecho):
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="dap" required>
-
-                        <label class="label" for="coord">
-                            Coordenada:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="coord" required>
-
-                        <label class="label" for="info-taxo">
-                            Informacion taxonomica:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <input type="text" class="text-field w-input" maxlength="256" id="info-taxo" required>
-
-                        <label class="label" for="comentario">
-                            Comentario:
-                            <span class="error" aria-live="polite"></span>
-                        </label>
-                        <textarea class="Comentario" maxlength="5000" id="comentario"></textarea>
-
+                        <!--cod grupo-->
                         <label class="label" for="grupo">
-                            Grupo:
-                            <span class="error" aria-live="polite"></span>
+                            Codigo Grupo:
                         </label>
                         <input type="text" class="text-field w-input" maxlength="256" id="grupo" required>
 
+                        <!--cod info taxonomica-->
+                        <label class="label" for="cod-info">
+                            Codigo Informacion taxonomica:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="cod-info" required>
 
+                        <!--nombre comun-->
+                        <label class="label" for="comun">
+                            Nombre Comun:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="comun" required>
 
-                        <input type="submit" value="GUARDAR" class="btn-guardar w-button">
+                        <!--DAP-->
+                        <label class="label" for="dap">
+                            Dap (diametro a la altura del pecho):
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="dap" required>
 
+                        <!--ubicacion-->
+                        <label class="label" for="coord">
+                            Coordenada:
+                        </label>
+                        <input type="text" class="text-field w-input" maxlength="256" id="coord" required>
+
+                        <!--comentario-->
+                        <label class="label" for="comentario">
+                            Comentario:
+                        </label>
+                        <textarea class="Comentario" maxlength="5000" id="comentario"></textarea>
+
+                        <!--boton guardar-->
+                        <input type="submit" value="GUARDAR" class="btn-guardar w-button" onclick="InsertArbol()">
                     </form>
                 </div>
             </div>
